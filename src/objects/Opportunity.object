@@ -101,7 +101,7 @@
         <fullName>Plan_End_Date__c</fullName>
         <externalId>false</externalId>
         <label>Schedule End Date</label>
-        <required>false</required>
+        <required>true</required>
         <trackFeedHistory>false</trackFeedHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
@@ -110,7 +110,7 @@
         <fullName>Plan_Start_Date__c</fullName>
         <externalId>false</externalId>
         <label>Schedule Start Date</label>
-        <required>false</required>
+        <required>true</required>
         <trackFeedHistory>false</trackFeedHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
