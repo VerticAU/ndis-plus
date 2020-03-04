@@ -942,10 +942,6 @@
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
-        <name>ConsentApiUpdate</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
         <name>ContentAdministrator</name>
     </userPermissions>
     <userPermissions>
