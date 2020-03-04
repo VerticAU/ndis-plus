@@ -1,0 +1,12 @@
+.THIS .text-left-aligned{
+    text-align: left;
+}
+.THIS .text-right-aligned{
+    text-align: right;
+}
+.THIS .slds-text-heading_small {
+    font-weight: 700 !important;
+}
+.THIS .slds-table td {
+    white-space: normal !important;
+}

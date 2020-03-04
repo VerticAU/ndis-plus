@@ -1,0 +1,50 @@
+<aura:component description="OpportunityEstimateSummary" extends="c:vertic_Base" implements="force:hasRecordId,flexipage:availableForRecordHome">
+
+    <aura:set attribute="processor" value="OpportunityEstimateSummaryMetaProc"/>
+    <aura:set attribute="hideContentOnBusy" value="{!false}"/>
+    <aura:handler name="init" action="{!c.baseHandleInit}" value="{!this}"/>
+    <aura:handler event="force:refreshView" action="{!c.isRefreshed}" />
+
+
+    <lightning:card title="Estimate Summary">
+        <!--<aura:set attribute="actions">-->
+        <!--<lightning:button label="New" onclick="{!c.handleNew}"/>-->
+        <!--</aura:set>-->
+        <table class="slds-table slds-table_cell-buffer slds-table_bordered slds-table_col-bordered slds-no-row-hover">
+            <tbody>
+            <aura:iteration items="{!v.meta.dto.itemsByPaymentMethodList}" var="paymentMethodTotal">
+
+                <aura:if isTrue="{!paymentMethodTotal.paymentMethod != 'Overall Total'}">
+                    <aura:iteration items="{!paymentMethodTotal.items}" var="item">
+                        <tr style="width: 100%">
+                            <td style="width: 80%">
+                                <div>
+                                    {!item.label}
+                                </div>
+                            </td>
+                            <td>
+                                <div>
+                                    <lightning:formattedNumber value="{!item.totalValue}" style="currency"/>
+                                </div>
+                            </td>
+                        </tr>
+                    </aura:iteration>
+                </aura:if>
+                <tr style="{!'width:100%; background:' + paymentMethodTotal.background }">
+                    <td style="border-right: none">
+                        <div>
+                            {!paymentMethodTotal.label}
+                        </div>
+                    </td>
+                    <td style="border-left: none">
+                        <div>
+                            <lightning:formattedNumber value="{!paymentMethodTotal.totalValue}" style="currency"/>
+                        </div>
+                    </td>
+                </tr>
+            </aura:iteration>
+            </tbody>
+        </table>
+    </lightning:card>
+
+</aura:component>
