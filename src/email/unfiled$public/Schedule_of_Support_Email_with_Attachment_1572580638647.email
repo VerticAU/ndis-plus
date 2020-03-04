@@ -1,0 +1,55 @@
+<html style="overflow-y: hidden;">
+<head>
+	<title></title>
+	<style type="text/css">table {
+    border-collapse: collapse !important;
+    border-spacing: 0 !important;
+}
+th, td {
+    padding: 0;
+    border-spacing: 0 !important;
+}
+	</style>
+</head>
+<body style="width: 100%; font-family: roboto, &quot;helvetica neue&quot;, helvetica, arial, sans-serif; padding: 0px; margin: 0px; height: auto; min-height: auto;">
+<div class="es-wrapper-color" style="background-color:#F6F6F6;">
+<table cellpadding="0" cellspacing="0" class="es-wrapper" style="border-collapse:collapse;border-spacing:0px;padding:0;Margin:0;width:100%;height:100%;background-repeat:repeat;background-position:center top;" width="100%">
+	<tbody>
+		<tr style="border-collapse:collapse;">
+			<td class="st-br" valign="top">
+			<table align="center" cellpadding="0" cellspacing="0" class="es-content" style="border-collapse:collapse;border-spacing:0px;table-layout:fixed;width:100%;">
+				<tbody>
+					<tr style="border-collapse:collapse;">
+						<td align="center" bgcolor="transparent" style="padding:0;Margin:0;background-color:transparent;">
+						<table align="center" bgcolor="transparent" cellpadding="0" cellspacing="0" class="es-content-body" style="border-collapse:collapse;border-spacing:0px;background-color:transparent;" width="600">
+							<tbody>
+								<tr style="border-collapse:collapse;">
+									<td align="left" style="Margin:0;padding-top:5px;padding-bottom:5px;padding-left:30px;padding-right:30px;border-radius:10px;background-position:left top;background-color:#FFFFFF;">
+									<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;border-spacing:0px;" width="100%">
+										<tbody>
+											<tr style="border-collapse:collapse;">
+												<td valign="top" width="540">
+												<div style="text-align: center;"><br />
+												<span style="font-size:22px;"><b>Schedule of Support</b></span></div>
+												<br />
+												Dear {{{Recipient.FirstName}}},<br />
+												<br />
+												Please find attached to this email your <strong>Schedule of Support.</strong></td>
+											</tr>
+										</tbody>
+									</table>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			</td>
+		</tr>
+	</tbody>
+</table>
+</div>
+</body>
+</html>
