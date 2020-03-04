@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <compactLayouts>
+        <fullName>Product_Compact</fullName>
+        <fields>Name</fields>
+        <fields>NDIS_Support_Number__c</fields>
+        <fields>Family</fields>
+        <label>Product Compact</label>
+    </compactLayouts>
+    <fields>
+        <fullName>Activity_Fee__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Activity Fee</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Carelink_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Carelink Name</label>
+        <length>80</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Category__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Category</label>
+        <referenceTo>Category__c</referenceTo>
+        <relationshipLabel>Products</relationshipLabel>
+        <relationshipName>Products</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Controlled_by_Price_Guide__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Controlled by Price Guide</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>NDIS_Portal_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>Category__r.NDIS_Portal_Name__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>NDIS Portal Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NDIS_Support_Number__c</fullName>
+        <externalId>false</externalId>
+        <label>NDIS Support Number</label>
+        <length>155</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>State__c</fullName>
+        <externalId>false</externalId>
+        <label>State</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>NDIA - ACT</fullName>
+                    <default>false</default>
+                    <label>NDIA - ACT</label>
+                </value>
+                <value>
+                    <fullName>NDIA - NSW</fullName>
+                    <default>false</default>
+                    <label>NDIA - NSW</label>
+                </value>
+                <value>
+                    <fullName>NDIA - QLD</fullName>
+                    <default>false</default>
+                    <label>NDIA - QLD</label>
+                </value>
+                <value>
+                    <fullName>NDIA - VIC</fullName>
+                    <default>false</default>
+                    <label>NDIA - VIC</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+</CustomObject>

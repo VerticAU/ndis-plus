@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>Category_ID__c</fullName>
+        <externalId>false</externalId>
+        <formula>CASESAFEID(PricebookEntry.Product2.Category__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Category ID</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Details_of_Support__c</fullName>
+        <externalId>false</externalId>
+        <formula>&quot;Up to &quot; &amp; TEXT(Quantity) &amp; &quot; &quot; &amp;   
+TEXT(PricebookEntry.Product2.QuantityUnitOfMeasure)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Details of Support</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Fee_Applies__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Indicates if an Activity or Program Fee applies</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Indicates if an Activity or Program Fee applies</inlineHelpText>
+        <label>Fee Applies</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Number_of_Occurrences__c</fullName>
+        <externalId>false</externalId>
+        <label>Number of Occurrences</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Payment_Method__c</fullName>
+        <externalId>false</externalId>
+        <label>Payment Method</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetName>Payment_Method</valueSetName>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>TDT_Support_Provided__c</fullName>
+        <externalId>false</externalId>
+        <label>TDT Support Provided</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Total_value__c</fullName>
+        <externalId>false</externalId>
+        <formula>Quantity  *  UnitPrice</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total Value</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Units_Per_Occurrence__c</fullName>
+        <externalId>false</externalId>
+        <label>Units Per Occurrence</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+</CustomObject>

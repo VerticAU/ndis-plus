@@ -38,11 +38,7 @@
     </actionOverrides>
     <actionOverrides>
         <actionName>View</actionName>
-        <comment>Action override created by Lightning App Builder during activation.</comment>
-        <content>Category_Record_Page</content>
-        <formFactor>Large</formFactor>
-        <skipRecordTypeSelect>false</skipRecordTypeSelect>
-        <type>Flexipage</type>
+        <type>Default</type>
     </actionOverrides>
     <allowInChatterGroups>false</allowInChatterGroups>
     <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
@@ -51,82 +47,63 @@
     <enableBulkApi>true</enableBulkApi>
     <enableFeeds>false</enableFeeds>
     <enableHistory>false</enableHistory>
-    <enableReports>true</enableReports>
+    <enableReports>false</enableReports>
     <enableSearch>true</enableSearch>
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
     <externalSharingModel>Private</externalSharingModel>
     <fields>
-        <fullName>Category_Number__c</fullName>
+        <fullName>Rate_Year__c</fullName>
         <externalId>false</externalId>
-        <label>Category Number</label>
-        <precision>2</precision>
-        <required>true</required>
-        <scale>0</scale>
-        <trackTrending>false</trackTrending>
-        <type>Number</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
-        <fullName>NDIS_Portal_Name__c</fullName>
-        <description>NDIS portal name</description>
-        <externalId>false</externalId>
-        <label>NDIS Portal Name</label>
-        <length>80</length>
-        <required>true</required>
-        <trackTrending>false</trackTrending>
-        <type>Text</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
-        <fullName>Type__c</fullName>
-        <externalId>false</externalId>
-        <label>Type</label>
+        <label>Rate Year</label>
         <required>false</required>
         <trackTrending>false</trackTrending>
         <type>Picklist</type>
         <valueSet>
-            <restricted>true</restricted>
             <valueSetDefinition>
                 <sorted>false</sorted>
                 <value>
-                    <fullName>Core Support</fullName>
+                    <fullName>18/19</fullName>
                     <default>false</default>
-                    <label>Core Support</label>
+                    <label>18/19</label>
                 </value>
                 <value>
-                    <fullName>NDIS Support</fullName>
+                    <fullName>19/20</fullName>
                     <default>false</default>
-                    <label>NDIS Support</label>
-                </value>
-                <value>
-                    <fullName>Non NDIS</fullName>
-                    <default>false</default>
-                    <label>Non NDIS</label>
+                    <label>19/20</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
     </fields>
-    <label>Category</label>
-    <listViews>
-        <fullName>All</fullName>
-        <filterScope>Everything</filterScope>
-        <label>All</label>
-    </listViews>
+    <fields>
+        <fullName>Rate__c</fullName>
+        <externalId>false</externalId>
+        <label>Rate</label>
+        <precision>12</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Service_Name__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Service Name</label>
+        <referenceTo>Product2</referenceTo>
+        <relationshipLabel>Price Table</relationshipLabel>
+        <relationshipName>Price_Table</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <label>Price Table</label>
     <nameField>
-        <label>Category Name</label>
+        <label>Price Table Name</label>
         <type>Text</type>
     </nameField>
-    <pluralLabel>Categories</pluralLabel>
-    <searchLayouts>
-        <customTabListAdditionalFields>Type__c</customTabListAdditionalFields>
-        <lookupDialogsAdditionalFields>Type__c</lookupDialogsAdditionalFields>
-        <lookupPhoneDialogsAdditionalFields>Type__c</lookupPhoneDialogsAdditionalFields>
-        <searchFilterFields>NAME</searchFilterFields>
-        <searchFilterFields>Type__c</searchFilterFields>
-        <searchResultsAdditionalFields>NDIS_Portal_Name__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>Type__c</searchResultsAdditionalFields>
-    </searchLayouts>
+    <pluralLabel>Price Table</pluralLabel>
+    <searchLayouts/>
     <sharingModel>ReadWrite</sharingModel>
     <visibility>Public</visibility>
 </CustomObject>
