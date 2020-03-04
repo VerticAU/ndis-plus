@@ -1,0 +1,82 @@
+<aura:component description="AddProductsModal" extends="c:vertic_Modal">
+
+    <aura:attribute name="recordId" type="String"/>
+    <aura:set attribute="hideContentOnBusy" value="{!false}"/>
+    <aura:set attribute="processor" value="AddProductsModalMetaProc"/>
+    <!--<aura:set attribute="heightPX" value="600"/>-->
+
+    <aura:handler name="init" value="{!this}" action="{!c.handleInit}"/>
+
+    <lightning:card variant="base"
+                    iconName="standard:product">
+        <aura:set attribute="title">
+            NDIS Support Items
+        </aura:set>
+        <aura:set attribute="actions">
+            <lightning:button label="New"
+                              onclick="{! c.handleNewProductClick }"
+                              variant="neutral"
+                              iconName="utility:add"
+                              iconPosition="left">
+            </lightning:button>
+        </aura:set>
+
+        <!--<div style="min-height: 600px;">-->
+        <aura:if isTrue="{!v.meta.dto.products}">
+            <table class="slds-table slds-table_cell-buffer slds-table_bordered slds-m-left--small">
+                <thead class="c-table-header">
+                <tr class="slds-line-height_reset slds-grid c-th-1-line">
+                    <th width="3%" style="min-width: 150px;">
+                        <div class="pre-line" title="Select a category">Select a Category</div>
+                    </th>
+                    <th width="50%">
+                        <div class="pre-line" title="Product Name">NDIS Support Item</div>
+                    </th>
+                    <th class="slds-col">
+                        <div class="pre-line" title="TDT Support Provided">TDT Support Provided</div>
+                    </th>
+                </tr>
+                <tr class="slds-line-height_reset slds-grid slds-m-bottom--medium c-th-2-line">
+                    <th width="3%" style="min-width: 150px;"></th>
+                    <th class="slds-col" scope="col" width="8%">
+                        <div class="pre-line" title="Number of Occurrences">Number of Occurrences</div>
+                    </th>
+                    <th class="slds-col" scope="col" width="8%">
+                        <div class="pre-line" title="Unit Per Occurrence">Unit Per Occurrence</div>
+                    </th>
+                    <th class="slds-col" scope="col" width="8%">
+                        <div class="pre-line" title="Total Units">Total Units</div>
+                    </th>
+                    <th class="slds-col" scope="col" width="8%">
+                        <div class="pre-line" title="Unit Price">Unit Price</div>
+                    </th>
+                    <th class="slds-col" scope="col" width="8%">
+                        <div class="pre-line" title="Unit Quoted Price">Unit Quoted Price</div>
+                    </th>
+                    <th class="slds-col" scope="col" width="8%">
+                        <div class="pre-line" title="Total Value">Total Value</div>
+                    </th>
+                    <th class="slds-col" scope="col">
+                        <div class="pre-line" title="Payment Method">Payment Method</div>
+                    </th>
+                    <th class="slds-col" scope="col" width="5%">
+                        <div class="pre-line" title="Fee Applies">Fee Applies</div>
+                    </th>
+                    <th class="slds-col" scope="col" width="1%">
+                        <div class="pre-line" title="Actions"></div>
+                    </th>
+                </tr>
+                </thead>
+            </table>
+            <div class="container slds-scrollable">
+                <c:OpportunityProductItems aura:id="productsList" products="{!v.meta.dto.products}" meta="{!v.meta}"/>
+            </div>
+        </aura:if>
+        <!--</div>-->
+
+        <aura:set attribute="footer">
+            <lightning:button name="Cancel" label="Cancel" onclick="{!c.handleCancelClick}"/>
+            <lightning:button name="Submit" label="Submit" variant="brand" onclick="{!c.handleSubmitClick}"/>
+        </aura:set>
+    </lightning:card>
+</aura:component>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Agency Managed</fullName>
+        <default>false</default>
+        <label>Agency Managed</label>
+    </customValue>
+    <customValue>
+        <fullName>Self Managed</fullName>
+        <default>false</default>
+        <label>Self Managed</label>
+    </customValue>
+    <customValue>
+        <fullName>Plan Management</fullName>
+        <default>false</default>
+        <label>Plan Management</label>
+    </customValue>
+    <masterLabel>Funding Management Method</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

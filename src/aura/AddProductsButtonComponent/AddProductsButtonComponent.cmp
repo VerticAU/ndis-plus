@@ -1,0 +1,8 @@
+<aura:component description="AddProductsButtonComponent"  implements="force:hasRecordId,force:lightningQuickActionWithoutHeader,flexipage:availableForAllPageTypes">
+    <aura:attribute type="String" name="buttonText" default="Add Products"/>
+
+    <c:vertic_ModalService aura:id="modalService"/>
+    <div class="slds-align-middle slds-text-align--right">
+        <lightning:button type="button" class="new-activity-btn" label="{!v.buttonText}" onclick="{!c.handleClick}"/>
+    </div>
+</aura:component>

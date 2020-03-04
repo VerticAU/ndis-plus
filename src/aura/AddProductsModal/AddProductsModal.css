@@ -1,0 +1,25 @@
+.THIS .container {
+    height: 275px;
+    min-height: 275px;
+    max-height: 700px;
+}
+
+/*.THIS thead.c-thead-fixed th {*/
+    /*position: sticky;*/
+    /*top: 0;*/
+    /*background: white;*/
+/*}*/
+
+.THIS thead tr.c-th-1-line th {
+    font-weight: bold;
+    background-color: #BFBFBF; /* ligher #ECEBEA */
+
+}
+.THIS thead tr.c-th-2-line th {
+    font-style: italic;
+    font-weight: lighter;
+    background-color: #F2F2F2; /* ligher #f2f2f29e */
+}
+.THIS thead.c-table-header {
+    /*border-bottom: 2px #DDDBDA solid;*/
+}

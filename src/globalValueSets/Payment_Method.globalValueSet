@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>NDIA Managed</fullName>
+        <default>false</default>
+        <label>NDIA Managed</label>
+    </customValue>
+    <customValue>
+        <fullName>Plan Managed</fullName>
+        <default>false</default>
+        <label>Plan Managed</label>
+    </customValue>
+    <customValue>
+        <fullName>Self Managed</fullName>
+        <default>false</default>
+        <label>Self Managed</label>
+    </customValue>
+    <customValue>
+        <fullName>Self Funded</fullName>
+        <default>false</default>
+        <label>Self Funded</label>
+    </customValue>
+    <masterLabel>Payment Method</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

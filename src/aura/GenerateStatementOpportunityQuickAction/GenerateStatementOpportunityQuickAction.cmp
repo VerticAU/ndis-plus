@@ -1,0 +1,73 @@
+<aura:component extends="c:vertic_Base"
+                implements="force:lightningQuickActionWithoutHeader,force:appHostable"
+                access="global">
+
+    <!-- Attribute Overrides -->
+    <aura:set attribute="processor" value="GenerateStatementOppQAMetaProc"/>
+    <aura:set attribute="hideContentOnBusy" value="{!false}"/>
+
+    <!-- Attributes -->
+    <aura:attribute name="includeAmount" type="Boolean" access="private" default="{!false}"/>
+    <aura:attribute name="isVariation" type="Boolean" access="private" default="{!false}"/>
+    <aura:attribute name="hasBeenProvided" type="Boolean" access="private" default="{!false}"/>
+
+    <!-- Events -->
+    <!-- <aura:registerEvent name="onSuccess" type="c:vertic_ComponentEvent"/>-->
+
+    <!-- Handlers -->
+    <aura:handler name="init" value="{!this}" action="{!c.handleInit}"/>
+    <aura:handler name="change" value="{!v.includeAmount}" action="{!c.handleToggleChange}"/>
+    <aura:handler name="change" value="{!v.isVariation}" action="{!c.handleToggleChange}"/>
+    <aura:handler name="change" value="{!v.hasBeenProvided}" action="{!c.handleToggleChange}"/>
+
+    <c:vertic_QuickActionModal aura:id="modal"
+                               heightPX="880"
+                               title="Schedule of Support"
+                               widthPercentage="100"
+                               maxWidthRem="90"
+                               minWidthRem="30">
+        <div class="slds-grid slds-gutters_small slds-p-horizontal__small">
+            <div class="slds-col slds-has-flexi-truncate" role="listitem">
+                <c:vertic_ContentPreview aura:id="PDFContentEditor"
+                                         recordId="{!v.recordId}"
+                                         iFrameHeight="720px"/>
+            </div>
+        </div>
+
+        <aura:set attribute="footer">
+            <lightning:input label="Show Amount"
+                             type="toggle"
+                             class="slds-float--left slds-m-right--x-large"
+                             messageToggleActive=""
+                             messageToggleInactive=""
+                             checked="{!v.includeAmount}"/>
+            <lightning:input label="Is Variation"
+                             type="toggle"
+                             class="slds-float--left slds-m-right--x-large"
+                             messageToggleActive=""
+                             messageToggleInactive=""
+                             checked="{!v.isVariation}"/>
+            <lightning:input label="Copy Provided"
+                             type="toggle"
+                             class="slds-float--left slds-m-right--x-large"
+                             messageToggleActive=""
+                             messageToggleInactive=""
+                             checked="{!v.hasBeenProvided}"/>
+
+            <!--<lightning:button type="button"-->
+                              <!--disabled="{!v.isBusy}"-->
+                              <!--label="Email"-->
+                              <!--variant="brand"-->
+                              <!--class="slds-m-left&#45;&#45;x-small"-->
+                              <!--onclick="{!c.handleEmailPDFClick}">-->
+            <!--</lightning:button>-->
+            <lightning:button type="button"
+                              disabled="{!v.isBusy}"
+                              label="Generate PDF"
+                              variant="brand"
+                              class="slds-m-horizontal--small"
+                              onclick="{!c.handleGeneratePDFClick}">
+            </lightning:button>
+        </aura:set>
+    </c:vertic_QuickActionModal>
+</aura:component>

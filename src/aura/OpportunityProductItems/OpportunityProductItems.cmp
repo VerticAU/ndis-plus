@@ -1,0 +1,13 @@
+<aura:component description="OpportunityProductItems">
+
+    <aura:attribute name="meta" type="Map"/>
+    <aura:attribute name="products" type="Object[]" access="public"/>
+
+    <table class="slds-table slds-table_cell-buffer slds-table_bordered slds-m-left--small">
+        <tbody>
+        <aura:iteration items="{!v.products}" var="product" indexVar="indexVar">
+            <c:OpportunityLineItemRow meta="{!v.meta}" product="{!product}" isDeleteDisabled="{! v.products.length == 1 }" indexVar="{!indexVar}"/>
+        </aura:iteration>
+        </tbody>
+    </table>
+</aura:component>

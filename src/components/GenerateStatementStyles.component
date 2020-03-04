@@ -1,0 +1,40 @@
+<apex:component id="GenerateStatementStyles" layout="none">
+
+    <apex:attribute name="dto" description="Data Transfer Object" type="Map"/>
+
+    <style>
+        @page {
+            size: 11.69in 8.27in;
+            margin: 0.5in 0.3in;
+        }
+
+        * {
+            font-size: 10pt;
+            font-family: sans-serif !important;
+        }
+
+        .checkbox {
+            margin: 0 !important;
+        }
+
+        .odd-bottom-center, .even-bottom-center {
+            text-align: center;
+        }
+
+        .odd-bottom-center:after, .even-bottom-center:after {
+            content: 'Page ' counter(page) ' of ' counter(pages);
+        }
+
+        table.c-table {
+            border-collapse: collapse;
+            border: 0.5px solid black !important;
+            -fs-table-paginate: paginate;
+        }
+
+        table.c-table tr td,
+        table.c-table tr th {
+            border: 0.5px black solid !important;
+        }
+    </style>
+
+</apex:component>

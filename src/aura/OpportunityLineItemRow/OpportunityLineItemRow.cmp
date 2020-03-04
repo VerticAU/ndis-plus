@@ -1,0 +1,145 @@
+<aura:component description="OpportunityLineItemRow" extends="c:vertic_Base">
+    <aura:set attribute="hideContentOnBusy" value="{!false}"/>
+
+    <aura:attribute name="product" type="Object" access="public"/>
+    <aura:attribute name="meta" type="Map"/>
+    <aura:attribute name="indexVar" type="Integer"/>
+    <aura:attribute name="isDeleteDisabled" type="Boolean"/>
+    <aura:handler name="change" value="{!v.product.Category_ID__c}" action="{!c.handleCategoryChange}"/>
+    <aura:handler name="change" value="{!v.product.Product2Id}" action="{!c.handleProductChange}"/>
+    <aura:registerEvent name="deleteProductItem" type="c:vertic_ComponentEvent"/>
+
+    <aura:if isTrue="{!v.product.IsDeleted != true}">
+        <tr class="slds-hint-parent slds-grid">
+            <td data-label="Select a Category" scope="row" width="3%" style="min-width: 150px;">
+                <span style="margin-left: -25px; margin-top: 8px; float: left;">{!v.indexVar + 1}</span>
+
+                <div class="slds-truncate" title="Select a Category">
+                    <c:vertic_Select label="Select a category"
+                                     variant="label-hidden"
+                                     options="{!v.meta.selectOptions.categoryOptions}"
+                                     value="{!v.product.Category_ID__c}"
+                    />
+                </div>
+            </td>
+            <td data-label="Product Name" scope="row" width="50%">
+                <div title="Product Name">
+                    <c:strike_lookup label="Product"
+                                     iconName="standard:product"
+                                     object="Product2"
+                                     searchField="Name"
+                                     limit="10"
+                                     disabled="{!v.product.Category_ID__c == ''}"
+                                     showRecentRecords="{!true}"
+                                     filter="{!'Category__c = \'' + v.product.Category_ID__c + '\' AND Id IN (SELECT Product2Id FROM PricebookEntry WHERE Pricebook2Id = \'' + v.meta.dto.opportunity.Pricebook2Id + '\')'}"
+                                     value="{!v.product.Product2Id}"
+                    />
+                </div>
+            </td>
+            <td class="slds-col" data-label="TDT Support Provided">
+                <div class="slds-truncate" title="TDT Support Provided">
+                    <lightning:input label="TDT Support Provided"
+                                     variant="label-hidden"
+                                     value="{!v.product.TDT_Support_Provided__c}"/>
+                </div>
+            </td>
+        </tr>
+        <tr class="slds-hint-parent slds-grid">
+            <td width="3%" style="min-width: 150px;"></td>
+            <td class="slds-col" data-label="Number of Occurrences" width="8%">
+                <div class="slds-truncate" title="Number of Occurrences">
+                    <lightning:input variant="label-hidden"
+                                     id="{!'input-for-focus-' + v.indexVar}"
+                                     label="Number of Occurrences"
+                                     type="number"
+                                     step="0.01"
+                                     onchange="{!c.handleInputChange}"
+                                     value="{!v.product.Number_of_Occurrences__c}"/>
+                </div>
+            </td>
+            <td class="slds-col" data-label="Unit Per Occurrence" width="8%">
+                <div class="slds-truncate" title="Unit Per Occurrence">
+                    <lightning:input variant="label-hidden"
+                                     label="Number of Occurrences"
+                                     type="number"
+                                     step="0.01"
+                                     onchange="{!c.handleInputChange}"
+                                     value="{!v.product.Units_Per_Occurrence__c}"/>
+                </div>
+            </td>
+            <td class="slds-col" data-label="Total Units" width="8%">
+                <div class="slds-truncate" title="Total Units">
+                    <lightning:input variant="label-hidden"
+                                     label="Total Units"
+                                     type="number"
+                                     onchange="{!c.handleInputChange}"
+                                     value="{!v.product.Quantity}"
+                                     readonly="{!true}"/>
+                </div>
+            </td>
+            <td class="slds-col" data-label="Unit Price" width="8%">
+                <div class="slds-truncate" title="Unit Price">
+                    <lightning:input variant="label-hidden"
+                                     label="Unit Price"
+                                     type="number"
+                                     formatter="currency"
+                                     step="0.01"
+                                     value="{!v.product.ListPrice}"
+                                     readonly="{!true}"/>
+                </div>
+            </td>
+            <td class="slds-col" data-label="Unit Quoted Price" width="8%">
+                <div class="slds-truncate" title="Unit Quoted Price">
+                    <lightning:input variant="label-hidden"
+                                     label="Unit Quoted Price"
+                                     type="number"
+                                     formatter="currency"
+                                     step="0.01"
+                                     onchange="{!c.handleInputChange}"
+                                     value="{!v.product.UnitPrice}"/>
+                </div>
+            </td>
+            <td class="slds-col" data-label="Total Value" width="8%">
+                <div class="slds-truncate" title="Total Value">
+                    <lightning:input variant="label-hidden"
+                                     label="Total Value"
+                                     type="number"
+                                     formatter="currency"
+                                     step="0.01"
+                                     value="{!v.product.Total_value__c}"
+                                     readonly="{!true}"/>
+                </div>
+            </td>
+            <td class="slds-col" data-label="Payment Method">
+                <div class="slds-truncate" title="Payment Method">
+                    <c:vertic_Select label="Payment Method"
+                                     variant="label-hidden"
+                                     options="{!v.meta.selectOptions.paymentMethodOptions}"
+                                     value="{!v.product.Payment_Method__c}"
+                    />
+                </div>
+            </td>
+            <td class="slds-col" data-label="Fee Applies" width="5%">
+                <div class="slds-truncate" title="Fee Applies">
+                    <lightning:input variant="label-hidden"
+                                     label="Fee Applies"
+                                     type="checkbox"
+                                     checked="{!v.product.Fee_Applies__c}"/>
+                </div>
+            </td>
+            <td class="slds-col" data-label="Actions" width="1%">
+                <div title="Actions">
+                    <lightning:buttonIcon iconName="utility:delete"
+                                          variant="bare"
+                                          onclick="{!c.handleDeleteClick}"
+                                          value=""
+                                          alternativeText="Delete"
+                                          disabled="{!v.isDeleteDisabled}"
+                    />
+                </div>
+            </td>
+        </tr>
+
+    </aura:if>
+
+</aura:component>

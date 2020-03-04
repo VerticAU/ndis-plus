@@ -1,0 +1,4 @@
+<apex:component id="DocumentToPdf" layout="none">
+	<apex:attribute name="dto" description="Data Transfer Object" type="Map"/>
+	<apex:outputText value="{!dto['content']}" escape="false"/>
+</apex:component>
