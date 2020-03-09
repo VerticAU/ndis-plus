@@ -17,4 +17,5 @@ ndis-plus
 3) Deploy ndis-plus by click button 'Deploy to Salesforce'
 4) Change on Opportunity page the lightning page layout (edit page/open page/ choose 'Opportunity Record Page' then activate and save)
 5) If not exist then add tab: Category. Add new category. Change layout on Product - add field Category on Product.
+6) Add My Domain, then login and deploy to all users
 
