@@ -9,9 +9,9 @@ ndis-plus
 <br/>
 
 1) Before deploy need install:
-      - Hey logger 1 0
-      - Ffflib 1 0
-      - Vertic common 2 
+      - Hey logger 1 0          /packaging/installPackage.apexp?p0=04t6A000002stxN
+      - Ffflib 1 0              /packaging/installPackage.apexp?p0=04t0o000000oEVGAA2
+      - Vertic common 2 0 14    /packaging/installPackage.apexp?p0=04t2L000000Y012QAC
 
 2) Then need turn on the Quotes/Quote Settings in ORG Setup 
 3) Deploy ndis-plus by click button 'Deploy to Salesforce'
