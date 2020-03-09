@@ -1,4 +1,4 @@
-global class GenerateScheduleOpportunityAfterProc extends vertic_AbstractProcessor implements vertic_Structs.IRollbackable {
+global without sharing class GenerateScheduleOpportunityAfterProc extends vertic_AbstractProcessor implements vertic_Structs.IRollbackable {
 
     /**
      * ==============================================================================================================

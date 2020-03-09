@@ -360,7 +360,7 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>false</editable>
+        <editable>false</editable>Ø
         <field>OpportunityLineItem.Category_ID__c</field>
         <readable>true</readable>
     </fieldPermissions>
