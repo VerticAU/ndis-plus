@@ -7,9 +7,9 @@
     <aura:set attribute="hideContentOnBusy" value="{!false}"/>
 
     <!-- Attributes -->
-    <aura:attribute name="includeAmount" type="Boolean" access="private" default="{!false}"/>
-    <aura:attribute name="isVariation" type="Boolean" access="private" default="{!false}"/>
-    <aura:attribute name="hasBeenProvided" type="Boolean" access="private" default="{!false}"/>
+    <aura:attribute name="includeAmount" type="Boolean" access="public" default="{!false}"/>
+    <aura:attribute name="isVariation" type="Boolean" access="public" default="{!false}"/>
+    <aura:attribute name="hasBeenProvided" type="Boolean" access="public" default="{!false}"/>
 
     <!-- Events -->
     <!-- <aura:registerEvent name="onSuccess" type="c:vertic_ComponentEvent"/>-->
