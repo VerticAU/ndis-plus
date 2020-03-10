@@ -1,4 +1,4 @@
-<aura:component description="AddProductsModal" extends="c:vertic_Modal">
+<aura:component description="AddProductsModal" extends="c:vertic_Modal" implements="force:hasRecordId,force:lightningQuickActionWithoutHeader,flexipage:availableForAllPageTypes">
 
     <aura:attribute name="recordId" type="String"/>
     <aura:set attribute="hideContentOnBusy" value="{!false}"/>
