@@ -7,7 +7,7 @@
                 recordId: component.get('v.recordId')
             },
             {
-                header: 'NDIS Budget Entry',
+                // header: 'NDIS Budget Entry',
                 cssClass: 'slds-modal_large'
             }
         ).then($A.getCallback(function (response) {

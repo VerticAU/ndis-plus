@@ -11,7 +11,16 @@
     },
 
     handleCancelClick: function (cmp, event, helper) {
+
+        var closeAction = $A.get("e.force:closeQuickAction");
+        if (closeAction) closeAction.fire();
+
+        if(cmp.get('v.refreshOnCancel') === true){
+            var refreshAction = $A.get("e.force:refreshView");
+            if (refreshAction) refreshAction.fire();
+        }
         cmp.cancelModal();
+
     },
 
     handleSubmitClick: function (cmp, event, helper) {
@@ -41,6 +50,15 @@
                         "type": 'success'
                     });
                     toastEvent.fire();
+
+
+                    var closeAction = $A.get("e.force:closeQuickAction");
+                    if (closeAction) closeAction.fire();
+
+                    if(cmp.get('v.refreshOnCancel') === true){
+                        var refreshAction = $A.get("e.force:refreshView");
+                        if (refreshAction) refreshAction.fire();
+                    }
                     cmp.closeModal(true);
                 }),
                 function (errors) {
