@@ -10,7 +10,7 @@
     <aura:registerEvent name="deleteProductItem" type="c:vertic_ComponentEvent"/>
 
     <aura:if isTrue="{!v.product.IsDeleted != true}">
-        <tr class="slds-hint-parent slds-grid">
+        <tr class="slds-hint-parent slds-grid border-top" >
             <td data-label="Select a Category" scope="row" width="3%" style="min-width: 150px;">
                 <span style="margin-left: -25px; margin-top: 8px; float: left;">{!v.indexVar + 1}</span>
 
@@ -44,7 +44,7 @@
                 </div>
             </td>
         </tr>
-        <tr class="slds-hint-parent slds-grid">
+        <tr class="slds-hint-parent slds-grid border-bottom">
             <td width="3%" style="min-width: 150px;"></td>
             <td class="slds-col" data-label="Number of Occurrences" width="8%">
                 <div class="slds-truncate" title="Number of Occurrences">

@@ -1,3 +1,21 @@
 .THIS .slds-form-element > label {
     display: none !important;
 }
+
+
+.THIS .border-bottom {
+    border-color: #F2F2F2 !important;
+    border-style: solid;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-width: 1px;
+}
+.THIS .border-top {
+    border-color: #F2F2F2 !important;
+    border-style: solid;
+    border-bottom: none;
+    border-left: none;
+    border-right: none;
+    border-width: 1px;
+}

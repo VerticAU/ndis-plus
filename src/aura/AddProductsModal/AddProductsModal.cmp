@@ -10,8 +10,8 @@
     <c:vertic_QuickActionModal aura:id="modal"
                                heightPX="580"
                                title="NDIS Budget Entry"
-                               widthPercentage="90"
-                               maxWidthRem="90"
+                               widthPercentage="98"
+                               maxWidthRem="99"
                                showCancel="false"
                                minWidthRem="30">
 
@@ -82,11 +82,15 @@
             </aura:if>
             <!--</div>-->
 
-            <aura:set attribute="footer">
-                <lightning:button name="Cancel" label="Cancel" onclick="{!c.handleCancelClick}"/>
-                <lightning:button name="Submit" label="Submit" variant="brand" onclick="{!c.handleSubmitClick}"/>
-            </aura:set>
         </lightning:card>
+
+
+        <aura:set attribute="footer">
+            <lightning:button class="slds-float--left" name="Cancel" label="Cancel" onclick="{!c.handleCancelClick}"/>
+            <lightning:button name="Submit" label="Submit" variant="brand" onclick="{!c.handleSubmitClick}"/>
+        </aura:set>
+
+
     </c:vertic_QuickActionModal>
 
 </aura:component>
